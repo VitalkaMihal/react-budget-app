@@ -6,21 +6,48 @@ export interface ExpenseContextProviderProps {
 
 interface ExpensesContextState {
   expenses: any[];
+  deleteExpense: (id: number) => void;
+}
+
+interface Expense {
+  id: number;
+  name: string;
 }
 
 const ExpenseContext = createContext<ExpensesContextState>({} as ExpensesContextState);
 
-const useExpensesContextValue = () => {
+export const useExpensesContextValue = () => {
   const [expensesValue, setExpensesContextValue] = useState<ExpensesContextState>(() => {
     return {
-      expenses: [1, 2, 3],
+      expenses: [
+        {
+          id: 1,
+          name: "lopata",
+        },
+        {
+          id: 2,
+          name: "sobaca",
+        },
+      ],
+      deleteExpense: (id: number) => {
+        setExpensesContextValue((context) => ({
+          ...context,
+          expenses: context.expenses.filter((expense) => expense.id !== id),
+        }));
+      },
+      addExpense: (expense: Expense) => {
+        setExpensesContextValue((context) => ({
+          ...context,
+          expenses: [...context.expenses, expense],
+        }));
+      },
     };
   });
 
   return expensesValue;
 };
 
-export const UseExpenseContext = () => useContext(ExpenseContext);
+export const UseExpensesContext = () => useContext(ExpenseContext);
 
 export const ExpenseContextProvider = ({ children }: ExpenseContextProviderProps) => {
   return (
