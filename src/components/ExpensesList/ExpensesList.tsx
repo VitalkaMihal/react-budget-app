@@ -7,8 +7,8 @@ export const ExpensesList = () => {
     <div>
       {expenses.map((expense) => (
         <li key={expense.id}>
-          <p>id:{expense.id}</p>
-          <p>name:{expense.name}</p>
+          <p>expense:{expense.expense}</p>
+          <p>cost:{expense.cost}</p>
           <button onClick={() => deleteExpense(expense.id)}>x</button>
         </li>
       ))}

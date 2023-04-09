@@ -4,14 +4,15 @@ export interface ExpenseContextProviderProps {
   children: ReactNode;
 }
 
+interface Expense {
+  expense: string;
+  cost: string;
+  id: string;
+}
 interface ExpensesContextState {
   expenses: any[];
-  deleteExpense: (id: number) => void;
-}
-
-interface Expense {
-  id: number;
-  name: string;
+  deleteExpense: (expense: string) => void;
+  addExpense: (d: any) => any;
 }
 
 const ExpenseContext = createContext<ExpensesContextState>({} as ExpensesContextState);
@@ -19,17 +20,8 @@ const ExpenseContext = createContext<ExpensesContextState>({} as ExpensesContext
 export const useExpensesContextValue = () => {
   const [expensesValue, setExpensesContextValue] = useState<ExpensesContextState>(() => {
     return {
-      expenses: [
-        {
-          id: 1,
-          name: "lopata",
-        },
-        {
-          id: 2,
-          name: "sobaca",
-        },
-      ],
-      deleteExpense: (id: number) => {
+      expenses: [],
+      deleteExpense: (id: string) => {
         setExpensesContextValue((context) => ({
           ...context,
           expenses: context.expenses.filter((expense) => expense.id !== id),
