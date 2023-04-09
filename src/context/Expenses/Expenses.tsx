@@ -1,6 +1,6 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
 
-interface Prop {
+export interface ExpenseContextProviderProps {
   children: ReactNode;
 }
 
@@ -13,14 +13,16 @@ const ExpenseContext = createContext<ExpensesContextState>({} as ExpensesContext
 const useExpensesContextValue = () => {
   const [expensesValue, setExpensesContextValue] = useState<ExpensesContextState>(() => {
     return {
-      expenses: [],
+      expenses: [1, 2, 3],
     };
   });
 
   return expensesValue;
 };
 
-export const ExpenseContextProvider = ({ children }: Prop) => {
+export const UseExpenseContext = () => useContext(ExpenseContext);
+
+export const ExpenseContextProvider = ({ children }: ExpenseContextProviderProps) => {
   return (
     <ExpenseContext.Provider value={useExpensesContextValue()}>{children}</ExpenseContext.Provider>
   );
