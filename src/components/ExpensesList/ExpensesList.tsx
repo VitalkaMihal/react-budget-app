@@ -1,17 +1,15 @@
 import React from "react";
-import { UseExpensesContext } from "../../context/Expenses/Expenses";
+import { Expense, UseExpensesContext } from "../../context/Expenses/Expenses";
+import { ExpensesItem } from "../ExpensesItem/ExpensesItem";
 
 export const ExpensesList = () => {
-  const { expenses, deleteExpense } = UseExpensesContext();
+  const { expenses } = UseExpensesContext();
   return (
-    <div>
-      {expenses.map((expense) => (
-        <li key={expense.id}>
-          <p>expense:{expense.expense}</p>
-          <p>cost:{expense.cost}</p>
-          <button onClick={() => deleteExpense(expense.id)}>x</button>
-        </li>
-      ))}
-    </div>
+    <ul>
+      <h2>Expenses</h2>
+      {expenses.map((expense: Expense) => {
+        return <ExpensesItem expense={expense} />;
+      })}
+    </ul>
   );
 };

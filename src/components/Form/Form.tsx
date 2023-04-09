@@ -7,15 +7,16 @@ import uuid from "react-uuid";
 export const Form = () => {
   const { addExpense } = UseExpensesContext();
   const { register, handleSubmit, reset } = useForm();
-  const onSubmit = (d: any) => {
-    addExpense({ ...d, id: uuid() });
+  const onSubmit = (expense: any) => {
+    addExpense({ ...expense, id: uuid() });
     reset();
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <h2>Add Expense</h2>
       <input type="text" {...register("expense")} />
       <input type="number" {...register("cost")} />
-      <button type="submit" />
+      <button type="submit">Done</button>
     </form>
   );
 };
