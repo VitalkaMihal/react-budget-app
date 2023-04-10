@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Expense, UseExpensesContext } from "../../context/Expenses/Expenses";
+import { Expense, UseExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import { Badge } from "../Badge/Badge";
 
 interface ExpensesItemProps {

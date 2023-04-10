@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useForm } from "react-hook-form";
-import { UseExpensesContext } from "../../context/Expenses/Expenses";
+import { UseExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import uuid from "react-uuid";
 
 export const Form = () => {

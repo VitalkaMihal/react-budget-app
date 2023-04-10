@@ -1,5 +1,5 @@
 import React from "react";
-import { Expense, UseExpensesContext } from "../../context/Expenses/Expenses";
+import { Expense, UseExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import { ExpensesItem } from "../ExpensesItem/ExpensesItem";
 
 export const ExpensesList = () => {
