@@ -3,6 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { UseExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import uuid from "react-uuid";
+import { Button, Input, StyledForm } from "./styles";
 
 export const Form = () => {
   const { addExpense } = UseExpensesContext();
@@ -12,11 +13,11 @@ export const Form = () => {
     reset();
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <h2>Add Expense</h2>
-      <input type="text" {...register("expense")} />
-      <input type="number" {...register("cost")} />
-      <button type="submit">Done</button>
-    </form>
+      <Input type="text" {...register("expense")} />
+      <Input type="number" {...register("cost")} />
+      <Button type="submit">Done</Button>
+    </StyledForm>
   );
 };

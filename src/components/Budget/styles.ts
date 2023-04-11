@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const StyledBudget = styled.div`
-  box-sizing: border-box;
   display: flex;
   height: 100px;
   background: #7cc6fe;

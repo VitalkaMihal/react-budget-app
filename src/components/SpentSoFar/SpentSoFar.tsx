@@ -1,5 +1,6 @@
 import React from "react";
+import { Spent } from "./styles";
 
 export const SpentSoFar = () => {
-  return <div>SpentSoFar</div>;
+  return <Spent>SpentSoFar</Spent>;
 };
