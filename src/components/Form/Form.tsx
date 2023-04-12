@@ -21,7 +21,11 @@ export const Form = () => {
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <h2>Add Expense</h2>
       <Input
-        {...register("expense", { required: true, maxLength: 15, pattern: /^[A-Za-z]+$/i })}
+        {...register("expense", {
+          required: true,
+          maxLength: 15,
+          pattern: /^[A-Za-z | А-Яа-я]+$/i,
+        })}
         aria-invalid={errors.expense ? "true" : "false"}
       />
       {errors.expense?.type === "maxLength" && <p role="alert">name is long</p>}
