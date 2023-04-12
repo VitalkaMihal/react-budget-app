@@ -26,6 +26,7 @@ const Save = styled.form`
 `;
 
 const SaveInput = styled.input`
+  max-width: 150px;
   background: #7cc6fe;
   border: none;
   font-size: 20px;
