@@ -14,7 +14,7 @@ const BudgetContext = createContext<BudgetContextState>({} as BudgetContextState
 export const useBudgetContextValue = () => {
   const [budgetValue, setBudgetContextValue] = useState<BudgetContextState>(() => {
     return {
-      budget: "1000",
+      budget: "",
       saveBudget: (budget: string) => {
         setBudgetContextValue((context) => ({ ...context, budget: budget }));
       },

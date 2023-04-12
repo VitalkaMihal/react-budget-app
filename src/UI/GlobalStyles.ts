@@ -9,10 +9,11 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     h1, h3, p, ul, div {
-        margin: 0;
+        margin: 0 auto;
         padding: 0;
         box-sizing: border-box;
         width: 100%;
+        max-width: 700px;
 
     }
 `;

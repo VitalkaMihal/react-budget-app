@@ -19,4 +19,24 @@ const Edit = styled.button`
   border: none;
 `;
 
-export { StyledBudget, Edit };
+const Save = styled.form`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const SaveInput = styled.input`
+  background: #7cc6fe;
+  border: none;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  :focus,
+  :hover,
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    outline: none;
+    appearance: none;
+  }
+`;
+
+export { StyledBudget, Edit, Save, SaveInput };
