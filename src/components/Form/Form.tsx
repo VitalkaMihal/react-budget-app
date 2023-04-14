@@ -28,18 +28,46 @@ export const Form = () => {
         })}
         aria-invalid={errors.expense ? "true" : "false"}
       />
-      {errors.expense?.type === "maxLength" && <p role="alert">name is long</p>}
-      {errors.expense?.type === "required" && <p role="alert">name is required</p>}
-      {errors.expense?.type === "pattern" && <p role="alert">only letters</p>}
+      {errors.expense?.type === "maxLength" && (
+        <p role="alert" style={{ color: "red" }}>
+          expense is long
+        </p>
+      )}
+      {errors.expense?.type === "required" && (
+        <p role="alert" style={{ color: "red" }}>
+          enter expense
+        </p>
+      )}
+      {errors.expense?.type === "pattern" && (
+        <p role="alert" style={{ color: "red" }}>
+          only letters
+        </p>
+      )}
 
       <Input
         {...register("cost", { required: true, maxLength: 5, min: 1, pattern: /^[0-9]+$/i })}
         aria-invalid={errors.cost ? "true" : "false"}
       />
-      {errors.cost?.type === "maxLength" && <p role="alert">name is long</p>}
-      {errors.cost?.type === "required" && <p role="alert">name is required</p>}
-      {errors.cost?.type === "pattern" && <p role="alert">only numbers</p>}
-      {errors.cost?.type === "min" && <p role="alert">above zero</p>}
+      {errors.cost?.type === "maxLength" && (
+        <p role="alert" style={{ color: "red" }}>
+          cost is long
+        </p>
+      )}
+      {errors.cost?.type === "required" && (
+        <p role="alert" style={{ color: "red" }}>
+          enter cost
+        </p>
+      )}
+      {errors.cost?.type === "pattern" && (
+        <p role="alert" style={{ color: "red" }}>
+          only numbers
+        </p>
+      )}
+      {errors.cost?.type === "min" && (
+        <p role="alert" style={{ color: "red" }}>
+          above zero
+        </p>
+      )}
 
       <Button type="submit">Done</Button>
     </StyledForm>
