@@ -5,9 +5,8 @@ import { useToggle } from "../../hooks/useToggle";
 import { useForm } from "react-hook-form";
 
 export const Budget = () => {
-  const { budget } = useBudgetContext();
+  const { budget, saveBudget } = useBudgetContext();
   const [isTextChanged, setIsTextChanged] = useToggle(false);
-  const { saveBudget } = useBudgetContext();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = ({ budget }: any) => {
     saveBudget(budget);
