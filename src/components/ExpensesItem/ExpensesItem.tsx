@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Expense, UseExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import { Badge } from "../Badge/Badge";
 import { BudgeButton, Expenses } from "./styles";

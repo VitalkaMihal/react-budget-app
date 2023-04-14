@@ -5,6 +5,11 @@ import { UseExpensesContext } from "../../context/ExpensesContext/ExpensesContex
 import uuid from "react-uuid";
 import { Button, Input, StyledForm } from "./styles";
 
+interface ExpenseOnSubmitProps {
+  expense: string;
+  cost: string;
+}
+
 export const Form = () => {
   const { addExpense } = UseExpensesContext();
   const {
@@ -12,8 +17,8 @@ export const Form = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm();
-  const onSubmit = (expense: any) => {
+  } = useForm<ExpenseOnSubmitProps>();
+  const onSubmit = (expense: ExpenseOnSubmitProps) => {
     addExpense({ ...expense, id: uuid() });
     reset();
   };

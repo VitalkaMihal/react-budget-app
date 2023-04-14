@@ -10,9 +10,9 @@ export interface Expense {
   id: string;
 }
 interface ExpensesContextState {
-  expenses: any[];
-  deleteExpense: (expense: string) => void;
-  addExpense: (d: any) => any;
+  expenses: Expense[];
+  deleteExpense: (id: string) => void;
+  addExpense: (expense: Expense) => void;
 }
 
 const ExpenseContext = createContext<ExpensesContextState>({} as ExpensesContextState);
@@ -21,13 +21,13 @@ export const useExpensesContextValue = () => {
   const [expensesValue, setExpensesContextValue] = useState<ExpensesContextState>(() => {
     return {
       expenses: [],
-      deleteExpense: (id: string) => {
+      deleteExpense: (id) => {
         setExpensesContextValue((context) => ({
           ...context,
           expenses: context.expenses.filter((expense) => expense.id !== id),
         }));
       },
-      addExpense: (expense: Expense) => {
+      addExpense: (expense) => {
         setExpensesContextValue((context) => ({
           ...context,
           expenses: [...context.expenses, expense],

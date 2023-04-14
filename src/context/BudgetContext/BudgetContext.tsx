@@ -1,8 +1,8 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 
 interface BudgetContextState {
-  budget: string;
-  saveBudget: (budget: any) => any;
+  budget: number;
+  saveBudget: (budget: string) => void;
 }
 
 interface budgetContextProviderProps {
@@ -14,9 +14,9 @@ const BudgetContext = createContext<BudgetContextState>({} as BudgetContextState
 export const useBudgetContextValue = () => {
   const [budgetValue, setBudgetContextValue] = useState<BudgetContextState>(() => {
     return {
-      budget: "0",
-      saveBudget: (budget: string) => {
-        setBudgetContextValue((context) => ({ ...context, budget: budget }));
+      budget: 0,
+      saveBudget: (budget) => {
+        setBudgetContextValue((context) => ({ ...context, budget: Number(budget) }));
       },
     };
   });
