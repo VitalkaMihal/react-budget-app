@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Expense, UseExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import { ExpensesItem } from "../ExpensesItem/ExpensesItem";
+import { Search } from "../Input/Input";
 
 export const ExpensesList = () => {
   const { expenses } = UseExpensesContext();
+  const [expensesSearch, setExpensesSearch] = useState(expenses);
+  useEffect(() => setExpensesSearch(expenses), [expenses]);
+
+  const expensesCallBack = (e: any) => {
+    setExpensesSearch(expenses.filter((expense) => expense.expense.indexOf(e.target.value) !== -1));
+  };
   return (
     <div>
       <h2>Expenses</h2>
-      {expenses.map((expense: Expense) => {
+      <Search expensesCallBack={expensesCallBack} />
+      {expensesSearch.map((expense: Expense) => {
         return <ExpensesItem key={expense.id} expense={expense} />;
       })}
     </div>

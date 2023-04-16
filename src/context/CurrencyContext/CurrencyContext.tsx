@@ -1,15 +1,21 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 import { SingleValue } from "react-select";
 
+enum Currency {
+  USD = "$",
+  EUR = "€",
+  GBR = "£",
+}
+
 export interface OptionProps {
   readonly value: string;
   readonly label: string;
 }
 
 export const options: OptionProps[] = [
-  { value: "$", label: "USD" },
-  { value: "€", label: "EUR" },
-  { value: "£", label: "GBR" },
+  { value: Currency.USD, label: "USD" },
+  { value: Currency.EUR, label: "EUR" },
+  { value: Currency.GBR, label: "GBR" },
 ];
 
 interface CurrencyContextState {
