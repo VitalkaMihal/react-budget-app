@@ -1,10 +1,18 @@
 import React from "react";
 import { StyledBadge } from "./styles";
+import { UseCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
 
 interface BadgeProps {
   cost: string;
 }
 
 export const Badge = ({ cost }: BadgeProps) => {
-  return <StyledBadge>{cost}</StyledBadge>;
+  const { currencyValue } = UseCurrencyContext();
+
+  return (
+    <StyledBadge>
+      {currencyValue}
+      {cost}
+    </StyledBadge>
+  );
 };

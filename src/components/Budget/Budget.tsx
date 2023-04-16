@@ -3,6 +3,7 @@ import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
 import { StyledBudget, Edit, Save, SaveInput } from "./styles";
 import { useToggle } from "../../hooks/useToggle";
 import { useForm } from "react-hook-form";
+import { UseCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
 
 interface BudgetOnSubmitProps {
   enterBudget: string;
@@ -18,11 +19,16 @@ export const Budget = () => {
     setIsTextChanged();
   };
 
+  const { currencyValue } = UseCurrencyContext();
+
   return (
     <StyledBudget>
       {isTextChanged || (
         <>
-          <p>Budget: {budget}</p>
+          <p>
+            Budget: {currencyValue}
+            {budget}
+          </p>
           <Edit onClick={setIsTextChanged}>edit</Edit>
         </>
       )}

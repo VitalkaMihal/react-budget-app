@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Overspending, StyledRemaining } from "./styles";
 import { UseExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
 import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
+import { UseCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
 
 export const Remaining = () => {
   const { expenses } = UseExpensesContext();
   const { budget } = useBudgetContext();
   const [remaining, setRemaining] = useState(0);
   const [positiveSaldo, setPositiveSaldo] = useState(true);
+
+  const { currencyValue } = UseCurrencyContext();
 
   useEffect(() => {
     if (remaining >= 0) {
@@ -24,8 +27,18 @@ export const Remaining = () => {
 
   return (
     <>
-      {positiveSaldo && <StyledRemaining>Remaining: {remaining}</StyledRemaining>}
-      {positiveSaldo || <Overspending>Overspending by $100 {remaining * -1}</Overspending>}
+      {positiveSaldo && (
+        <StyledRemaining>
+          Remaining: {currencyValue}
+          {remaining}
+        </StyledRemaining>
+      )}
+      {positiveSaldo || (
+        <Overspending>
+          Overspending by {currencyValue}
+          {remaining * -1}
+        </Overspending>
+      )}
     </>
   );
 };
