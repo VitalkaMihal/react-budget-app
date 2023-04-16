@@ -8,7 +8,7 @@ export const ExpensesList = () => {
   const [expensesSearch, setExpensesSearch] = useState(expenses);
   useEffect(() => setExpensesSearch(expenses), [expenses]);
 
-  const expensesCallBack = (e: any) => {
+  const expensesCallBack = (e: React.ChangeEvent<HTMLInputElement>) => {
     setExpensesSearch(expenses.filter((expense) => expense.expense.indexOf(e.target.value) !== -1));
   };
   return (
