@@ -1,6 +1,6 @@
+import { UseCurrencyContext } from "context";
 import React from "react";
 import Select from "react-select";
-import { UseCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
 
 interface SelectStilesProps {
   [style: string]: () => void;

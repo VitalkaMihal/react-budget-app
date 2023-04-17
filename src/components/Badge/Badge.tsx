@@ -1,6 +1,6 @@
 import React from "react";
 import { StyledBadge } from "./styles";
-import { UseCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
+import { UseCurrencyContext } from "context";
 
 interface BadgeProps {
   cost: string;

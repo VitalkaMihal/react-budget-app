@@ -1,7 +1,6 @@
+import { ExpensesItem, Search } from "components";
+import { Expense, UseExpensesContext } from "context";
 import React, { useEffect, useState } from "react";
-import { Expense, UseExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
-import { ExpensesItem } from "../ExpensesItem/ExpensesItem";
-import { Search } from "../Input/Search";
 
 export const ExpensesList = () => {
   const { expenses } = UseExpensesContext();

@@ -1,9 +1,6 @@
 import React from "react";
-import { Budget } from "../Budget/Budget";
-import { Remaining } from "../Remaining/Remaining";
-import { SpentSoFar } from "../SpentSoFar/SpentSoFar";
-import { SelectCurrency } from "../Select/Select";
 import { Header } from "./styles";
+import { Budget, Remaining, SelectCurrency, SpentSoFar } from "components";
 
 export const BudgetList = () => {
   return (

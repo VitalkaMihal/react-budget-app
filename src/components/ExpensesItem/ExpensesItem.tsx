@@ -1,7 +1,7 @@
 import React from "react";
-import { Expense, UseExpensesContext } from "../../context/ExpensesContext/ExpensesContext";
-import { Badge } from "../Badge/Badge";
 import { BudgeButton, Expenses } from "./styles";
+import { Badge } from "components";
+import { Expense, UseExpensesContext } from "context";
 
 interface ExpensesItemProps {
   expense: Expense;

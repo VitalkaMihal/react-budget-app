@@ -1,9 +1,8 @@
 import React from "react";
-import { useBudgetContext } from "../../context/BudgetContext/BudgetContext";
 import { StyledBudget, Edit, Save, SaveInput } from "./styles";
-import { useToggle } from "../../hooks/useToggle";
 import { useForm } from "react-hook-form";
-import { UseCurrencyContext } from "../../context/CurrencyContext/CurrencyContext";
+import { UseCurrencyContext, useBudgetContext } from "context";
+import { useToggle } from "hooks";
 
 interface BudgetOnSubmitProps {
   enterBudget: string;
