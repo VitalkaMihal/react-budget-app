@@ -1,5 +1,6 @@
 import { ExpensesItem, Search } from "components";
 import { Expense, UseExpensesContext } from "context";
+import { useDebounce } from "hooks";
 import React, { useEffect, useState } from "react";
 
 export const ExpensesList = () => {
@@ -10,11 +11,14 @@ export const ExpensesList = () => {
   const expensesCallBack = (e: React.ChangeEvent<HTMLInputElement>) => {
     setExpensesSearch(expenses.filter((expense) => expense.expense.indexOf(e.target.value) !== -1));
   };
+
+  const searchDebounce = useDebounce(expensesSearch);
+
   return (
     <div>
       <h2>Expenses</h2>
       <Search expensesCallBack={expensesCallBack} />
-      {expensesSearch.map((expense: Expense) => {
+      {searchDebounce.map((expense: Expense) => {
         return <ExpensesItem key={expense.id} expense={expense} />;
       })}
     </div>

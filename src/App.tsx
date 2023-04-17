@@ -1,15 +1,14 @@
 import React from "react";
-import { ExpensesList } from "./components/ExpensesList/ExpensesList";
-import { Form } from "./components/Form/Form";
-import { BudgetList } from "./components/BudgetList/BudgetList";
+import { BudgetList, ExpensesList, Form } from "components";
+import { StyledContainer } from "styles";
 
 const App = () => {
   return (
-    <div className="App">
+    <StyledContainer>
       <BudgetList />
       <ExpensesList />
       <Form />
-    </div>
+    </StyledContainer>
   );
 };
 

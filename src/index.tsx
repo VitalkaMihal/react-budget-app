@@ -2,9 +2,7 @@ import React from "react";
 import { GlobalStyles } from "./UI/GlobalStyles";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { ExpenseContextProvider } from "./context/ExpensesContext/ExpensesContext";
-import { BudgetContextProvider } from "./context/BudgetContext/BudgetContext";
-import { CurrencyContextProvider } from "./context/CurrencyContext/CurrencyContext";
+import { BudgetContextProvider, CurrencyContextProvider, ExpenseContextProvider } from "context";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
