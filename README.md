@@ -1,6 +1,6 @@
 ## About The Project
 
-[![react-budget-app Screen Shot][product-screenshot]](./src/assets/srreen/screen.png)
+[![react-budget-app Screen Shot][product-screenshot]](https://github.com/VitalkaMihal/react-budget-app/blob/main/src/assets/srreen/screen.png)
 
 This project allows you to control expenses and balance.
 
