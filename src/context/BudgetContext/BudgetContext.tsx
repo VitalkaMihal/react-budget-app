@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 
-interface BudgetContextState {
+export interface BudgetContextState {
   budget: number;
   saveBudget: (budget: string) => void;
 }

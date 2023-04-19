@@ -18,7 +18,7 @@ export const options: OptionProps[] = [
   { value: Currency.GBR, label: "GBR" },
 ];
 
-interface CurrencyContextState {
+export interface CurrencyContextState {
   options: OptionProps[];
   option: OptionProps;
   handleCurrencySelect: (event: SingleValue<OptionProps>) => void;

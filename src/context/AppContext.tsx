@@ -1,11 +1,15 @@
-import React, { ReactNode } from "react";
+import React, { FunctionComponent, ReactNode } from "react";
 
 import { BudgetContextProvider, CurrencyContextProvider, ExpenseContextProvider } from "context";
 
-const combineComponents = (components: any[]) => {
+interface ChildrenProps {
+  children: ReactNode;
+}
+
+const combineComponents = (components: FunctionComponent<ChildrenProps>[]) => {
   return components.reduce(
     (AccumulatedComponents, CurrentComponent) =>
-      ({ children }: { children: ReactNode }) =>
+      ({ children }: ChildrenProps) =>
         (
           <AccumulatedComponents>
             <CurrentComponent>{children}</CurrentComponent>

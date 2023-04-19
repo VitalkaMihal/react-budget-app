@@ -2,6 +2,7 @@ import {
   useBudgetContextValue,
   useBudgetContext,
   BudgetContextProvider,
+  BudgetContextState,
 } from "./BudgetContext/BudgetContext";
 
 import {
@@ -9,6 +10,7 @@ import {
   options,
   UseCurrencyContext,
   CurrencyContextProvider,
+  CurrencyContextState,
 } from "./CurrencyContext/CurrencyContext";
 
 import {
@@ -33,4 +35,10 @@ export {
   UseExpensesContext,
   ExpenseContextProvider,
 };
-export type { ExpenseContextProviderProps, Expense, OptionProps };
+export type {
+  ExpenseContextProviderProps,
+  Expense,
+  OptionProps,
+  BudgetContextState,
+  CurrencyContextState,
+};
