@@ -19,10 +19,13 @@ import {
   ExpenseContextProvider,
 } from "./ExpensesContext/ExpensesContext";
 
+import { AppContextProvider } from "./AppContext";
+
 export {
   useBudgetContextValue,
   useBudgetContext,
   BudgetContextProvider,
+  AppContextProvider,
   options,
   UseCurrencyContext,
   CurrencyContextProvider,
