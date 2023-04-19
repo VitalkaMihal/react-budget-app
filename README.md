@@ -1,12 +1,12 @@
 ## About The Project
 
-[![react-budget-app Screen Shot][product-screenshot]](https://github.com/VitalkaMihal/react-budget-app/blob/main/src/assets/srreen/screen.png)
+![react-budget-app Screen Shot](https://github.com/VitalkaMihal/react-budget-app/blob/main/src/assets/srreen/screen.png)
 
 This project allows you to control expenses and balance.
 
 ### Built With
 
-- [![React][react.typescript]][react-url]
+react.typescript
 
 # Getting Started with Create React App
 
